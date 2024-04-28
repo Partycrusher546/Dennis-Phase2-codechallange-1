@@ -18,6 +18,9 @@ Bank of Flatiron is a simple banking application built with React.
    npm start
    ```
 
+   ## user interface
+   ![Screenshot(/home/dennis/Documents/moringa-school/phase-2/code-challanges/DENNIS@Phase2-codechallange/bank-of-flatiron/public/Screenshot from 2024-04-28 21-34-13.png)]
+
 ## Usage
 
 1. Adding Transactions: Fill out the form in the transaction input area and click "Add Transaction".
