@@ -1,0 +1,22 @@
+/* TransactionTable.css */
+.transaction-table-container {
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding inside the container */
+  margin-bottom: 20px; /* Margin at the bottom */
+}
+
+table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Collapse border */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Border color */
+  padding: 8px; /* Padding inside cells */
+  text-align: left; /* Align text to the left */
+}
+
+th {
+  background-color: #f2f2f2; /* Background color for header */
+}

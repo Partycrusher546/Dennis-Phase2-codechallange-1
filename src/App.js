@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState } from 'react';
+import TransactionTable from './Components/TransactionTable';
+import TransactionForm from './Components/TransactionForm';
 
-function App() {
+import SortButton from './Components/SortButton';
+import Header from './Components/Header';
+
+const App = () => {
+  const [transactions, setTransactions] = useState([
+    {
+      id: 1,
+      date: "4/26/2024",
+      description: "Transaction 1",
+      category: "Food",
+      amount: 25,
+    },
+    {
+      id: 2,
+      date: "4/27/2024",
+      description: "Transaction 2",
+      category: "Transport",
+      amount: 30,
+    },
+    {
+      id: 3,
+      date: "4/28/2024",
+      description: "Transaction 3",
+      category: "Shopping",
+      amount: 50,
+    },
+  ]);
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const addTransaction = (newTransaction) => {
+    setTransactions([...transactions, newTransaction]);
+  };
+
+  const deleteTransaction = (id) => {
+    const updatedTransactions = transactions.filter(transaction => transaction.id !== id);
+    setTransactions(updatedTransactions);
+  };
+
+  const handleSort = (key) => {
+    const sortedTransactions = [...transactions].sort((a, b) => {
+      if (key === "amount") {
+        return a[key] - b[key];
+      } else {
+        return a[key].localeCompare(b[key]);
+      }
+    });
+    setTransactions(sortedTransactions);
+  };
+
+  const filteredTransactions = transactions.filter((transaction) =>
+    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <TransactionForm addTransaction={addTransaction} />
+      <SortButton handleSort={handleSort} />
+      <TransactionTable transactions={filteredTransactions} deleteTransaction={deleteTransaction} />
     </div>
   );
-}
+};
 
 export default App;
