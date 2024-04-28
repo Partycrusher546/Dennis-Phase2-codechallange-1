@@ -1,22 +1,21 @@
-/* TransactionTable.css */
 .transaction-table-container {
-  border: 1px solid #ced4da; /* Border color */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px; /* Padding inside the container */
-  margin-bottom: 20px; /* Margin at the bottom */
+  border: 1px solid #ced4da; 
+  border-radius: 5px; 
+  padding: 10px; 
+  margin-bottom: 20px; 
 }
 
 table {
-  width: 100%; /* Full width */
-  border-collapse: collapse; /* Collapse border */
+  width: 100%; 
+  border-collapse: collapse; 
 }
 
 th, td {
-  border: 1px solid #ddd; /* Border color */
-  padding: 8px; /* Padding inside cells */
-  text-align: left; /* Align text to the left */
+  border: 1px solid #ddd; 
+  padding: 8px; 
+  text-align: left; 
 }
 
 th {
-  background-color: #f2f2f2; /* Background color for header */
+  background-color: #f2f2f2; 
 }

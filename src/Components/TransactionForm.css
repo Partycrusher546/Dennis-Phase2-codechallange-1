@@ -1,19 +1,19 @@
-/* TransactionForm.css */
+
 form {
   margin-bottom: 20px;
 }
 
 .input-container {
   display: flex;
-  justify-content: space-between; /* Align inputs in one row with space between them */
+  justify-content: space-between; 
   margin-bottom: 15px;
 }
 
 input[type="text"],
 input[type="number"],
 input[type="date"] {
-  flex: 1; /* Each input takes up equal space */
-  margin-right: 10px; /* Add some space between inputs */
+  flex: 1; 
+  margin-right: 10px; 
   padding: 10px;
   border: 1px solid #ced4da;
   border-radius: 5px;

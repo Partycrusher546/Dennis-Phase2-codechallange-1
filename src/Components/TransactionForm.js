@@ -1,4 +1,4 @@
-// TransactionForm.js
+
 import React, { useState } from 'react';
 import './TransactionForm.css';
 const TransactionForm = ({ addTransaction }) => {
@@ -11,7 +11,7 @@ const TransactionForm = ({ addTransaction }) => {
     e.preventDefault();
     const newTransaction = {
       id: Date.now(),
-      date: date || new Date().toLocaleDateString(), // If date is not entered, use current date
+      date: date || new Date().toLocaleDateString(), 
       description,
       category,
       amount: parseFloat(amount),

@@ -1,6 +1,5 @@
-// Header.js
 import React from 'react';
-import './Header.css'; // Import Header CSS
+import './Header.css'; 
 
 const Header = ({ searchTerm, setSearchTerm }) => {
   return (
