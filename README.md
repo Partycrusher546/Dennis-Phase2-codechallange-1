@@ -17,6 +17,8 @@ Bank of Flatiron is a simple banking application built with React.
    npm install
    npm start
    ```
+
+   ## user interface
 ![Bank of Flatiron UI](./public/Screenshot%20from%202024-04-28%2021-34-13.png)
 
 ## Usage
