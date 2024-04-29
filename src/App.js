@@ -58,19 +58,19 @@ const App = () => {
   );
 
   return (
-    <Router>
+  
       <div>
         <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <Route path="/" exact>
+      
           <TransactionForm addTransaction={addTransaction} />
           <SortButton handleSort={handleSort} />
           <TransactionTable
             transactions={filteredTransactions}
             handleDelete={handleDelete}
           />
-        </Route>
+      
       </div>
-    </Router>
+  
   );
 };
 
