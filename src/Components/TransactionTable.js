@@ -3,7 +3,7 @@ import './TransactionTable.css';
 
 const TransactionTable = ({ transactions, deleteTransaction }) => {
   return (
-    <div className="transaction-table-container">
+    <div className="transaction-container">
       <table>
         <thead>
           <tr>
@@ -11,7 +11,7 @@ const TransactionTable = ({ transactions, deleteTransaction }) => {
             <th>Description</th>
             <th>Category</th>
             <th>Amount</th>
-            <th>Action</th> 
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -21,9 +21,7 @@ const TransactionTable = ({ transactions, deleteTransaction }) => {
               <td>{transaction.description}</td>
               <td>{transaction.category}</td>
               <td>{transaction.amount}</td>
-              <td>
-                <button onClick={() => deleteTransaction(transaction.id)}>Delete</button>
-              </td> 
+              <td><button onClick={() => deleteTransaction(transaction.id)}>Delete</button></td>
             </tr>
           ))}
         </tbody>

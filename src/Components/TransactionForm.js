@@ -52,7 +52,7 @@ const TransactionForm = ({ addTransaction }) => {
         value={date}
         onChange={(e) => setDate(e.target.value)}
         required
-      />
+      /> <br />
       <button type="submit">Add Transaction</button>
     </form>
   );

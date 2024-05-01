@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Header from "./Components/Header";
-import TransactionTable from "./Components/TransactionTable";
-import TransactionForm from "./Components/TransactionForm";
-import SortButton from "./Components/SortButton";
+// App.js
+import React, { useState } from 'react';
+import TransactionTable from './Components/TransactionTable';
+import TransactionForm from './Components/TransactionForm';
+import Header from './Components/Header';
 
 const App = () => {
   const [transactions, setTransactions] = useState([
@@ -36,6 +35,11 @@ const App = () => {
     setTransactions([...transactions, newTransaction]);
   };
 
+  const deleteTransaction = (id) => {
+    const updatedTransactions = transactions.filter(transaction => transaction.id !== id);
+    setTransactions(updatedTransactions);
+  };
+
   const handleSort = (key) => {
     const sortedTransactions = [...transactions].sort((a, b) => {
       if (key === "amount") {
@@ -47,30 +51,16 @@ const App = () => {
     setTransactions(sortedTransactions);
   };
 
-  const handleDelete = (id) => {
-    setTransactions(
-      transactions.filter((transaction) => transaction.id !== id)
-    );
-  };
-
   const filteredTransactions = transactions.filter((transaction) =>
     transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-  
-      <div>
-        <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      
-          <TransactionForm addTransaction={addTransaction} />
-          <SortButton handleSort={handleSort} />
-          <TransactionTable
-            transactions={filteredTransactions}
-            handleDelete={handleDelete}
-          />
-      
-      </div>
-  
+    <div>
+      <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSort={handleSort} />
+      <TransactionForm addTransaction={addTransaction} />
+      <TransactionTable transactions={filteredTransactions} deleteTransaction={deleteTransaction} />
+    </div>
   );
 };
 
